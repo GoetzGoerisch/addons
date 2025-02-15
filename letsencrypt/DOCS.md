@@ -547,7 +547,7 @@ Example credentials file using restricted API Token (recommended):
     cloudflare_api_token: 0123456789abcdef0123456789abcdef01234
   ```
 
-Example credentials file using Global API Key (not recommended):
+Example credentials file using Global API Key (Security risk / NOT RECOMMENDED):
 
   ```yaml
   dns:
@@ -663,7 +663,7 @@ Example configuration:
 <details>
   <summary>Njalla</summary>
 
-You need to generate an API token inside Settings > API Access or directly at <https://njal.la/settings/api/>. If you have a static IP-address restrict the access to your IP. I you are not sure, you probably don't have a static IP-address.
+You need to generate an API token inside Settings > API Access or directly at <https://njal.la/settings/api/>. If you have a static IP-address restrict the access to your IP. If you are not sure, you probably don't have a static IP-address.
 
 Example configuration:
 
@@ -750,11 +750,11 @@ Use `ovh_endpoint: ovh-ca` for North America region.
 
 You will need to set up a server with RFC2136 (Dynamic Update) support with a TKEY (to authenticate the updates).  How to do this will vary depending on the DNS server software in use.  For Bind9, you first need to first generate an authentication key by running
 
-  ```yaml
+  ```shell
   $ tsig-keygen -a hmac-sha512 letsencrypt
   key "letsencrypt" {
-    algorithm hmac-sha512;
-    secret "G/adDW8hh7FDlZq5ZDW3JjpU/I7DzzU1PDvp26DvPQWMLg/LfM2apEOejbfdp5BXu78v/ruWbFvSK5dwYY7bIw==";
+        algorithm hmac-sha512;
+        secret "G/adDW8hh7FDlZq5ZDW3JjpU/I7DzzU1PDvp26DvPQWMLg/LfM2apEOejbfdp5BXu78v/ruWbFvSK5dwYY7bIw==";
   };
   ```
 
